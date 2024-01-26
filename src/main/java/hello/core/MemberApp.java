@@ -7,7 +7,10 @@ import hello.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+
+        //특정 파일로 이동 : ctrl + n + 가고싶은 파일 이름
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
