@@ -20,13 +20,13 @@ public class OrderServiceTest {
         orderService = appConfig.orderService();
     }
 
-    @Test
+    @Test       // 요즘 웹 개발을 할 때 테스트 코드는 선택이 아닌 필수 요소
     void createOrder(){
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "iteamA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000); // 검증할 때 씀
     }
 }

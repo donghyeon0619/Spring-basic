@@ -9,7 +9,7 @@ public class RateDiscountPolicy implements DiscountPolicy{
 
     @Override
     public int discount(Member member, int price) {
-        if(member.getGrade() == Grade.VIP){
+        if(member.getGrade() == Grade.VIP){     // ENUM은 정수 값이므로 ==연산자를 사용해야함
             return price * discountPercent / 100;
         }
         return 0;
