@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationContextBasicFindTest {
@@ -18,7 +19,7 @@ class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회")
     void findByName(){
         MemberService memberService = ac.getBean("memberService", MemberService.class);
-        Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
     // 특정 test만 실행 ctrl + shift + F10
@@ -26,7 +27,7 @@ class ApplicationContextBasicFindTest {
     @DisplayName("이름 없이 타임만으로 조회")
     void findByType(){
         MemberService memberService = ac.getBean(MemberService.class);
-        Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
     // 구체 타입으로 조회하는 것은 역할과 구현을 분리해야하는데 구현에 의존하게 되므로 별로 좋은 방법은 아님
@@ -35,7 +36,7 @@ class ApplicationContextBasicFindTest {
     @DisplayName("구체 타입으로 조회")
     void findByName2(){
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
-        Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
     //assrtThrows는 junit에서 기본적으로 제공해주는 메소드
