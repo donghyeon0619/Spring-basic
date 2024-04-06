@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 애플리케이션의 설정정보를 담당하는 에노테이션
+ * 설정 정보와 같은 기술 지원 빈은 수동으로 빈을 등록하는 것이 좋음
  */
 
 @Configuration
