@@ -23,6 +23,8 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig{
 
+//        @Bean(initMethod = "init", destroyMethod = "close")     //destroyMethod는 default가 (inferred) 이므로 생략해도됨
+//        ctrl + b : go to Declaration or Usages
         @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
