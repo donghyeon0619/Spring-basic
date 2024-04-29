@@ -27,8 +27,8 @@ public class PrototypeTest {
 
     }
 
-
-    @Scope("prototype")     //  @Component가 없다해도 AnnotationConfigApplicationContext에 파라미터로 대입하면 자동으로 빈으로 등록됨
+    //  @Component가 없다해도 AnnotationConfigApplicationContext에 파라미터로 대입하면 자동으로 빈으로 등록됨
+    @Scope("prototype")
     static class PrototypeBean{
 
         @PostConstruct
